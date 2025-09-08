@@ -1,4 +1,4 @@
-package main.java.com.game.hero.strategy;
+package com.game.hero.strategy;
 
 /**
  * Конкретная стратегия - полет

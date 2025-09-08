@@ -1,8 +1,8 @@
-package main.java.com.game.hero;
+package com.game.hero;
 
-import main.java.com.game.hero.strategy.FlyStrategy;
-import main.java.com.game.hero.strategy.RideHorseStrategy;
-import main.java.com.game.hero.strategy.WalkStrategy;
+import com.game.hero.strategy.FlyStrategy;
+import com.game.hero.strategy.RideHorseStrategy;
+import com.game.hero.strategy.WalkStrategy;
 
 public class Main {
     

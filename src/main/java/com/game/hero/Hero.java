@@ -1,7 +1,7 @@
-package main.java.com.game.hero;
+package com.game.hero;
 
-import main.java.com.game.hero.strategy.MoveStrategy;
-import main.java.com.game.hero.strategy.WalkStrategy;
+import com.game.hero.strategy.MoveStrategy;
+import com.game.hero.strategy.WalkStrategy;
 
 /**
  * Класс героя, использующий стратегию перемещения
