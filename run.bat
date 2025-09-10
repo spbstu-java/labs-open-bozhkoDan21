@@ -6,7 +6,7 @@ echo.
 
 echo Starting program...
 echo.
-java -cp bin com.game.hero.Main
+java -cp bin com.example.reflectionapp.Main
 
 echo.
 echo Program finished

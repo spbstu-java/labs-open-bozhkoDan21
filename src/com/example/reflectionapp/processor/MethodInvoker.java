@@ -1,7 +1,6 @@
 package com.example.reflectionapp.processor;
 
 import com.example.reflectionapp.annotation.InvokeMultiple;
-
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -10,7 +9,6 @@ import java.util.Map;
 
 public class MethodInvoker {
     
-    // Карта значений по умолчанию для различных типов параметров
     private static final Map<Class<?>, Object> DEFAULT_VALUES = new HashMap<>();
     
     static {
@@ -22,10 +20,37 @@ public class MethodInvoker {
     }
 
     /**
-     * Основной метод для вызова всех аннотированных методов
-     * @param target объект, методы которого нужно вызвать
+     * Вызывает все аннотированные методы
      */
-    public void invokeAnnotatedMethods(Object target) {
+    public void invokeAllMethods(Object target) {
+        invokeAnnotatedMethodsByModifier(target, 0); // 0 = все методы
+    }
+
+    /**
+     * Вызывает только public методы
+     */
+    public void invokePublicMethods(Object target) {
+        invokeAnnotatedMethodsByModifier(target, Modifier.PUBLIC);
+    }
+
+    /**
+     * Вызывает только private методы
+     */
+    public void invokePrivateMethods(Object target) {
+        invokeAnnotatedMethodsByModifier(target, Modifier.PRIVATE);
+    }
+
+    /**
+     * Вызывает только protected методы
+     */
+    public void invokeProtectedMethods(Object target) {
+        invokeAnnotatedMethodsByModifier(target, Modifier.PROTECTED);
+    }
+
+    /**
+     * Основной метод фильтрации по модификатору
+     */
+    private void invokeAnnotatedMethodsByModifier(Object target, int targetModifier) {
         if (target == null) {
             throw new IllegalArgumentException("Target object cannot be null");
         }
@@ -36,7 +61,16 @@ public class MethodInvoker {
             InvokeMultiple annotation = method.getAnnotation(InvokeMultiple.class);
             
             if (annotation != null) {
-                processAnnotatedMethod(target, method, annotation);
+                int modifiers = method.getModifiers();
+                
+                // Проверяем соответствие модификатору
+                if (targetModifier == 0 || // все методы
+                    (targetModifier == Modifier.PUBLIC && Modifier.isPublic(modifiers)) ||
+                    (targetModifier == Modifier.PRIVATE && Modifier.isPrivate(modifiers)) ||
+                    (targetModifier == Modifier.PROTECTED && Modifier.isProtected(modifiers))) {
+                    
+                    processAnnotatedMethod(target, method, annotation);
+                }
             }
         }
     }
@@ -50,7 +84,6 @@ public class MethodInvoker {
         boolean accessibilityChanged = false;
         
         try {
-            // Если метод недоступен (private/protected), временно делаем доступным
             if (!method.isAccessible()) {
                 method.setAccessible(true);
                 accessibilityChanged = true;
@@ -74,7 +107,6 @@ public class MethodInvoker {
 
     /**
      * Подготавливает параметры для вызова метода
-     * @return массив значений параметров или null если параметров нет
      */
     private Object[] prepareMethodParameters(Method method) {
         Class<?>[] parameterTypes = method.getParameterTypes();
