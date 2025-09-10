@@ -5,7 +5,7 @@ echo ===============================
 echo.
 
 echo Compiling source code...
-javac -d bin src\com\game\hero\*.java src\com\game\hero\strategy\*.java
+javac -d bin src\com\example\reflectionapp\*.java src\com\example\reflectionapp\annotation\*.java src\com\example\reflectionapp\domain\*.java src\com\example\reflectionapp\processor\*.java
 
 if %errorlevel% equ 0 (
     echo COMPILATION SUCCESSFUL!
