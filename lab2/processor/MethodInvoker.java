@@ -1,6 +1,6 @@
-package reflectionapp.processor;
+package lab2.processor;
 
-import reflectionapp.annotation.InvokeMultiple;
+import lab2.annotation.InvokeMultiple;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;

@@ -1,6 +1,6 @@
-package reflectionapp.domain;
+package lab2.domain;
 
-import reflectionapp.annotation.InvokeMultiple;
+import lab2.annotation.InvokeMultiple;
 
 public class SampleService {
     

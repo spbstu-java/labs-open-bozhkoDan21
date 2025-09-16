@@ -1,7 +1,7 @@
-package reflectionapp;
+package lab2;
 
-import reflectionapp.domain.SampleService;
-import reflectionapp.processor.MethodInvoker;
+import lab2.domain.SampleService;
+import lab2.processor.MethodInvoker;
 import java.util.Scanner;
 
 public class Main {
