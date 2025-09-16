@@ -1,7 +1,7 @@
-package com.example.reflectionapp;
+package reflectionapp;
 
-import com.example.reflectionapp.domain.SampleService;
-import com.example.reflectionapp.processor.MethodInvoker;
+import reflectionapp.domain.SampleService;
+import reflectionapp.processor.MethodInvoker;
 import java.util.Scanner;
 
 public class Main {
