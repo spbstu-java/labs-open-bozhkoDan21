@@ -1,9 +1,9 @@
-package hero;
+package lab1;
 
-import hero.strategy.FlyStrategy;
-import hero.strategy.RideHorseStrategy;
-import hero.strategy.WalkStrategy;
-import hero.strategy.MoveStrategy;
+import lab1.strategy.FlyStrategy;
+import lab1.strategy.RideHorseStrategy;
+import lab1.strategy.WalkStrategy;
+import lab1.strategy.MoveStrategy;
 import java.util.Scanner;
 
 public class Main {

@@ -1,4 +1,4 @@
-package hero.strategy;
+package lab1.strategy;
 
 /**
  * Интерфейс стратегии перемещения героя

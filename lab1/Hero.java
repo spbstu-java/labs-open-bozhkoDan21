@@ -1,7 +1,7 @@
-package hero;
+package lab1;
 
-import hero.strategy.MoveStrategy;
-import hero.strategy.WalkStrategy;
+import lab1.strategy.MoveStrategy;
+import lab1.strategy.WalkStrategy;
 
 /**
  * Класс героя, использующий стратегию перемещения

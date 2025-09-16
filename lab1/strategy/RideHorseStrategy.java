@@ -1,4 +1,4 @@
-package hero.strategy;
+package lab1.strategy;
 
 /**
  * Конкретная стратегия - перемещение на лошади
