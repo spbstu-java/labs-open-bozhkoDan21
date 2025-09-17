@@ -1,0 +1,21 @@
+hello | привет
+world | мир
+look | смотреть
+look forward | ожидать
+good | хороший
+good morning | доброе утро
+cat | кошка
+dog | собака
+window | окно
+to | к
+the |
+I | я
+you | ты
+he | он
+she | она
+it | оно
+we | мы
+they | они
+is | есть
+are | являются
+am | есть
